@@ -1,26 +1,8 @@
 ﻿#include <iostream>
 
-class Computer
+class Car
 {
-private:
-    int Power;
-    char Mainboard[10];
- 
-   
-public:
-    int color;
-    int Price;
 
-private:
-    void PowerPrint()
-    {
-        std::cout << "파워는" << Power << "W(와트)" << std::endl;
-    }
-public:
-    void PricePrint()
-    {
-        std::cout << "가격은" << Price << std::endl;
-    }
 };
 
 int main()
@@ -61,4 +43,31 @@ int main()
     Galaxy yourphone;
     yourphone.color = 2;
 }
+*/
+
+/*
+    #include <iostream>
+
+class Computer
+{
+private:
+    int Power;
+    char Mainboard[10];
+ 
+   
+public:
+    int color;
+    int Price;
+
+private:
+    void PowerPrint()
+    {
+        std::cout << "파워는" << Power << "W(와트)" << std::endl;
+    }
+public:
+    void PricePrint()
+    {
+        std::cout << "가격은" << Price << std::endl;
+    }
+};
 */
