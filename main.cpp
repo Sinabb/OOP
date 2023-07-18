@@ -1,62 +1,9 @@
 ﻿#include <iostream>
 
-class Monster
-{
-private:
-    int mHealth;
-    int mLevel;
-
-public:
-    // default constructor
-  /*  Monster()//기본 생성자
-    {
-        mHealth = 1;
-        mLevel = 1;
-    }*/
-    Monster(int level,int health) // 생성자
-    {
-        mLevel = level;
-        mHealth = health;
-    }
-    Monster()
-    {
-        mHealth = mLevel = 0;
-        std::cout << "여기" << std::endl;
-    }
-    Monster(int level)
-    {
-        mLevel = level;
-        mHealth = 0;
-    }
-    void Print()
-    {
-        std::cout << "health:"<<mHealth << std::endl;
-        std::cout << "level:"<<mLevel << std::endl;
-    }
-
-};
-class MyClass
-{
-public:
-    int mx;
-    int mY;
-   
-
-};
-
 
 int main()
 {
-    Monster m1;
-    Monster m2( 1,2 );
-    Monster m3(1);
-
-    Monster m4{};
-    Monster m5{1,2};
-    Monster m6{1};
-    m1.Print();
-    
-    std::cout << sizeof(Monster) << std::endl;
+   
 }
 
 /*
@@ -263,4 +210,56 @@ int main()
     p1.set(3,3);
     p1.Print();
     std::cout<<p1.Distance()<<std::endl;
+*/
+
+/*
+    class Monster
+{
+private:
+    int mHealth{1};
+    int mLevel{1};
+
+public:
+    // default constructor
+     Monster()//기본 생성자
+    {
+        mHealth = 1;
+        mLevel = 1;
+  
+Monster(int level = 0, int health = 0) // 생성자
+{
+    mLevel = level;
+    mHealth = health;
+}
+  Monster()
+  {
+      mHealth = mLevel = 0;
+      std::cout << "여기" << std::endl;
+  }
+  Monster(int level)
+  {
+      mLevel = level;
+      mHealth = 0;
+
+void Print()
+{
+    std::cout << "health:" << mHealth << std::endl;
+    std::cout << "level:" << mLevel << std::endl;
+}
+
+};
+
+int main()
+{
+    int x = 2;
+    int y(2);
+    int y{ 2 };
+    int z = { 2 };
+
+    Monster m1 = Monster(1);
+    Monster m2(10, 100);
+    Monster m3{ 10,100 };
+    Monster m4 = { 10,100 };
+}
+
 */
