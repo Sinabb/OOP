@@ -1,14 +1,62 @@
 ﻿#include <iostream>
-#include "Player.h"
+
+class Monster
+{
+private:
+    int mHealth;
+    int mLevel;
+
+public:
+    // default constructor
+  /*  Monster()//기본 생성자
+    {
+        mHealth = 1;
+        mLevel = 1;
+    }*/
+    Monster(int level,int health) // 생성자
+    {
+        mLevel = level;
+        mHealth = health;
+    }
+    Monster()
+    {
+        mHealth = mLevel = 0;
+        std::cout << "여기" << std::endl;
+    }
+    Monster(int level)
+    {
+        mLevel = level;
+        mHealth = 0;
+    }
+    void Print()
+    {
+        std::cout << "health:"<<mHealth << std::endl;
+        std::cout << "level:"<<mLevel << std::endl;
+    }
+
+};
+class MyClass
+{
+public:
+    int mx;
+    int mY;
+   
+
+};
 
 
 int main()
 {
-    Player wolf;
-    wolf.GetAttack();
+    Monster m1;
+    Monster m2( 1,2 );
+    Monster m3(1);
+
+    Monster m4{};
+    Monster m5{1,2};
+    Monster m6{1};
+    m1.Print();
     
-    Player::Sword s1;
-    Player::Costume costume = Player::Costume::Summer;
+    std::cout << sizeof(Monster) << std::endl;
 }
 
 /*
@@ -140,4 +188,79 @@ int main()
 {
    
 }
+*/
+
+/*
+class Aircondtioner
+{
+    int mTemperature;
+public:
+    int GetTemperature() const // const 앞에 this가 생략되잇음, 이 함수는 멤버 변수 값을 바꿀 수 없다.
+    {
+        return mTemperature;
+    }
+};
+
+class Calendar
+{
+private:
+    int mMonth;
+public:
+    void SetMonth(std::string m)
+    {
+        // Dec ->12
+        mMonth = 12;
+    }
+    std::string GetMonth() const
+    {
+        // 1 -jan
+        // 2 -fed
+        return "january";
+    }
+};
+
+int main()
+{
+    Player wolf;
+    wolf.GetAttack();
+
+    Player::Sword s1;
+    Player::Costume costume = Player::Costume::Summer;
+
+    Aircondtioner myHouse;
+    myHouse.GetTemperature();
+}
+*/
+
+/*
+    class MyClass
+{
+public:
+    MyClass()
+    {
+        std::cout << "[생성자]" << std::endl;
+    }
+    ~MyClass()
+    {
+        std::cout << "[소멸자]" << std::endl;
+    }
+};
+
+int main()
+{
+    std::cout << "start" << std::endl;
+
+    MyClass c1;
+    MyClass* c2 = new MyClass;
+    delete c2;
+
+    std::cout << "end" << std::endl;
+}
+*/
+
+/*
+    point2D p1;
+    p1.set(3,3);
+    p1.Print();
+    std::cout<<p1.Distance()<<std::endl;
 */

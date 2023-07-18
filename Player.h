@@ -19,10 +19,12 @@ private:
 	int mHealth;
 	int mAttack;
 public:
+	Player() {}
+	~Player(){}
+
 	void Walk();
 	void Run();
 	void Jump();
-public:
 	int GetAttack()
 	{
 		if (mAttack<0)
