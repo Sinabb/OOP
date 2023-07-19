@@ -1,32 +1,7 @@
 ﻿#include <iostream>
 
-class Monster
-{
-private:
-    int mHealth{1};
-    int mLevel{1};
-
-public:
-    Monster(int level = 0, int health = 0) :mHealth{ level }, mLevel{ health } // 생성자
-    {
-        mLevel = level;
-        mHealth = health;
-
-        std::cout << "Create" << std::endl;
-    }
- 
-    void Print()
-    {
-        std::cout << "health:"<<mHealth << std::endl;
-        std::cout << "level:"<<mLevel << std::endl;
-    }
-
-};
-
 int main()
 {
-    Monster m1(10, 100);
-    m1.Print();
 }
 
 /*
@@ -285,4 +260,35 @@ int main()
     Monster m4 = { 10,100 };
 }
 
+*/
+
+/*
+    class Monster
+{
+private:
+    int mHealth{1};
+    int mLevel{1};
+
+public:
+    Monster(int level = 0, int health = 0) :mHealth{ level }, mLevel{ health } // 생성자
+    {
+        mLevel = level;
+        mHealth = health;
+
+        std::cout << "Create" << std::endl;
+    }
+ 
+    void Print()
+    {
+        std::cout << "health:"<<mHealth << std::endl;
+        std::cout << "level:"<<mLevel << std::endl;
+    }
+
+};
+
+int main()
+{
+    Monster m1(10, 100);
+    m1.Print();
+}
 */

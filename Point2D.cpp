@@ -1,17 +1,19 @@
 #include <iostream>
 #include <cmath>
-#include "point2D.h"
+#include "Point2D.h"
 
-void point2D::set(int x, int y)
+void Point2D::set(int x, int y)
 {
-
+	mX = x;
+	mY = y;
+}
+ 
+double Point2D::Distance() const
+{
+	return sqrt(mX * mX + mY * mY);
 }
 
-double point2D::Distance() const
+void Point2D::Print() const
 {
-	return 0.0;
-}
-
-void point2D::Print() const
-{
+	std::cout << "(" << mX << "," << mY << ")" << std::endl;
 }
