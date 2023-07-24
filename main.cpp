@@ -1,7 +1,32 @@
 ﻿#include <iostream>
 
+class Sword
+{
+    friend class Player;
+private:
+    int mDamage;
+public:
+    Sword(int dmg):mDamage(dmg){}
+};
+
+class Player
+{
+public:
+    void AttackWith(Sword& sword)
+    {
+        std::cout << "칼을 휘둘러"<<sword.mDamage<<"만큼 피해를 주었다." << std::endl;
+    }
+
+    void A(){}
+    void B(){}
+};
+
+
 int main()
 {
+    Sword Muramasa{ 10 };
+    Player p1;
+    p1.AttackWith(Muramasa);
 }
 
 /*
@@ -290,5 +315,183 @@ int main()
 {
     Monster m1(10, 100);
     m1.Print();
+}
+*/
+
+/* Const instance
+    #include <iostream>
+
+class MyClass
+{
+public:
+    int mValue1;
+    int mValue2;
+
+    MyClass() : MyClass(1,1){}
+    MyClass(int v1, int v2):mValue1{v1},mValue2{v2}{}
+
+    void Change(int x, int y)
+    {
+        mValue1 = x;
+        mValue2 = y;
+    }
+
+    void Print() const
+    {
+        std::cout << mValue1 << "," << mValue2 << std::endl;
+    }
+};
+
+int main()
+{
+    const MyClass c1{2,2};
+
+    c1.mValue1 = 1;
+    c1.Change(1, 1);
+    c1.Print();
+}
+*/
+
+/* static
+class MyClass
+{
+public:
+    int mvalue1;
+
+};
+
+void f()
+{
+    static MyClass c1 {1};
+
+    std::cout <<c1.mvalue1++ << std::endl;
+}
+
+int main()
+{
+    f();
+    f();
+    f();
+}
+*/
+
+/*
+    class MyClass static variable
+{ 
+public:
+    //선언
+    static int mValue1;// 처음 한번만 초기화하고 그 다음은 무시
+                       // 인스턴스가 아닌 클래스에 속한 클래스 변수
+    void Print()
+    {
+        std::cout << mValue1<< std::endl;
+    }
+};
+
+int MyClass::mValue1 = 0;
+
+int main()
+{
+    MyClass c1;
+    MyClass::mValue1 = 1;
+    c1.mValue1();
+
+    MyClass c2;
+
+    MyClass::mValue1 = 2;
+    c2.mValue1();
+
+}
+*/
+/* 탄환 생성
+    #include <iostream>
+
+class Bullet
+{
+public:
+    static int sCount;
+    
+    Bullet()
+    {
+        sCount++;
+        std::cout << "[+]" << sCount << std::endl;
+    }
+    ~Bullet()
+    {
+        sCount--;
+        std::cout << "[-]" << sCount << std::endl;
+    }
+};
+
+int Bullet::sCount {};
+
+int main()
+{
+    Bullet b1;
+    for (int i = 0; i < 100; i++)
+    {
+        Bullet b1;
+        Bullet* p = new Bullet();
+    }
+    std::cout << Bullet::sCount << std::endl;
+}
+*/
+
+/* static Function
+    #include <iostream>
+
+class MyClass
+{
+public:
+    static int mValue1;
+    static void Function();
+
+};
+
+void MyClass::Function()
+{
+    std::cout << mValue1 << std::endl;
+}
+
+int main()
+{
+    MyClass c1;
+    MyClass::Function();
+
+    MyClass c2;
+    MyClass::Function();
+}
+*/
+
+/* friend
+    #include <iostream>
+
+class Sword
+{
+    friend class Player;
+private:
+    int mDamage;
+public:
+    Sword(int dmg):mDamage(dmg){}
+};
+
+class Player
+{
+public:
+    void AttackWith(Sword& sword)
+    {
+        std::cout << "칼을 휘둘러"<<sword.mDamage<<"만큼 피해를 주었다." << std::endl;
+    }
+
+    void A(){}
+    void B(){}
+};
+
+
+int main()
+{
+    Sword Muramasa{ 10 };
+    Player p1;
+    p1.AttackWith(Muramasa);
 }
 */
