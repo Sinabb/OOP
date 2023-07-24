@@ -2,11 +2,11 @@
 
 class Sword
 {
-    friend class Player;
+    friend void  Player::AttackWith(Sword& sword);
 private:
     int mDamage;
 public:
-    Sword(int dmg):mDamage(dmg){}
+    Sword(int dmg) :mDamage(dmg) {}
 };
 
 class Player
@@ -14,11 +14,11 @@ class Player
 public:
     void AttackWith(Sword& sword)
     {
-        std::cout << "칼을 휘둘러"<<sword.mDamage<<"만큼 피해를 주었다." << std::endl;
+        std::cout << "칼을 휘둘러" << sword.mDamage << "만큼 피해를 주었다." << std::endl;
     }
 
-    void A(){}
-    void B(){}
+    void A() {}
+    void B() {}
 };
 
 
@@ -493,5 +493,28 @@ int main()
     Sword Muramasa{ 10 };
     Player p1;
     p1.AttackWith(Muramasa);
+}
+*/
+
+/*
+class Sword
+{
+    friend void Upgrade(Sword& sword);
+private:
+    int mDamage;
+public:
+    Sword(int dmg):mDamage(dmg){}
+};
+
+void Upgrade(Sword& sword)
+{
+    int oldDamage = sword.mDamage;
+    std::cout << oldDamage << "->" << (sword.mDamage += sword.mDamage) << std::endl;
+}
+
+int main()
+{
+    Sword shortSword(1);
+    Upgrade(shortSword);
 }
 */
