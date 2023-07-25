@@ -1,34 +1,53 @@
 ﻿#include <iostream>
-
-class Sword; // forward declaration
-
-class Player
-{
-public:
-    void AttackWith(Sword& sword);
-    void A();
-};
-
-class Sword
-{
-    friend void Player::AttackWith(Sword& sword);
-private:
-    int mDamage;
-public:
-    Sword(int dmg) :mDamage(dmg) {}
-};
-
-void Player::AttackWith(Sword& sword)
-{
-    std::cout << "칼을 휘둘러" << sword.mDamage << "만큼 피해를 주었다." << std::endl;
-}
+#include "Point2D.h"
 
 int main()
 {
-    Sword Muramasa{ 10 };
-    Player p1;
-    p1.AttackWith(Muramasa);
+    
+
+    Point2D pt1{ 2,3 };
+    Point2D pt2{ 3,4 };
+
+    Point2D pt3 = pt1 + pt2;
+    pt3.Print();
+    Point2D pt4 = pt1 + pt2+pt3;
+    pt4.Print();
+
+    Point2D pt5 = pt2 - pt1;
+    pt5.Print();
+
+    /*
+    int x{1}, y{};
+    y = ++x;
+
+    std::cout << x << "," << y << std::endl;
+    */
+
+    //++ 연산자 오버로딩
+    Point2D pt6{ 1,2 }, pt7{};
+    pt7 = ++pt6;
+
+    pt6.Print();
+    pt7.Print();
+
+    pt7 = pt6++;
+    pt6.Print();
+    pt7.Print();
+
+    //-- 연산자 오버로딩
+    Point2D pt8{ 1,2 }, pt9{};
+    pt9 = --pt8;
+
+    pt8.Print();
+    pt9.Print();
+
+    pt9 = pt8--;
+
+    pt8.Print();
+    pt9.Print();
 }
+
+
 
 /*
 class Galaxy
@@ -518,4 +537,39 @@ int main()
     Sword shortSword(1);
     Upgrade(shortSword);
 }
+*/
+
+/*
+    #include <iostream>
+
+class Sword; // forward declaration
+
+class Player
+{
+public:
+    void AttackWith(Sword& sword);
+    void A();
+};
+
+class Sword
+{
+    friend void Player::AttackWith(Sword& sword);
+private:
+    int mDamage;
+public:
+    Sword(int dmg) :mDamage(dmg) {}
+};
+
+void Player::AttackWith(Sword& sword)
+{
+    std::cout << "칼을 휘둘러" << sword.mDamage << "만큼 피해를 주었다." << std::endl;
+}
+
+int main()
+{
+    Sword Muramasa{ 10 };
+    Player p1;
+    p1.AttackWith(Muramasa);
+}
+
 */
