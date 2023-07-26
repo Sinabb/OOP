@@ -3,8 +3,6 @@
 
 int main()
 {
-    
-
     Point2D pt1{ 2,3 };
     Point2D pt2{ 3,4 };
 
@@ -44,6 +42,13 @@ int main()
     pt9 = pt8--;
 
     pt8.Print();
+    pt9.Print();
+
+    //
+    
+    std::cout << pt9[0] << "," << pt9[1] << std::endl;
+    pt9[0] = 10;
+    pt9[1] = 20;
     pt9.Print();
 }
 
